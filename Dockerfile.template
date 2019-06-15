@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
   && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m venv env
-RUN env/bin/python -m pip install --upgrade pip setuptools wheel
-RUN source env/bin/activate && \
+RUN python3 -m venv /env
+RUN /env/bin/python -m pip install --upgrade pip setuptools wheel
+RUN source /env/bin/activate && \
     python -m pip install --upgrade google-assistant-library==1.0.1  && \
     python -m pip install --upgrade google-assistant-sdk[samples]==0.5.1
 
