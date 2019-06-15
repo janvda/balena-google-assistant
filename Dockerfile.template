@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-python:3.7.3-stretch-run
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-python:3.5.7-stretch-run
 
 #RUN apt-get update && apt-get install -yq --no-install-recommends \
 #   python3-dev python3-venv
