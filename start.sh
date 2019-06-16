@@ -7,18 +7,14 @@ if [ "$GOOGLE_ASSISTANT_CREDENTIALS2" != '' ]; then
 else
     echo "Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !"
     if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET" != '' ]; then
-      if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME" != '' ]; then
-        echo "Creating the client_secret_... file based on the contents  device service variables GOOGLE_ASSISTANT_CLIENT_SECRET and GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME"
+        echo "Creating /client_secret.json fbased on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
         echo $GOOGLE_ASSISTANT_CLIENT_SECRET >  /client_secret.json   #/$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME
-        source /env/bin/activate 
-        google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype \
-                             --scope https://www.googleapis.com/auth/gcm \
-                             --save --headless --client-secrets /client_secret.json # /$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME
-      else
-        echo "In order to create credentials, you must set the Device Service Variable 'GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME' to the client secret filename !"
-      fi
+        echo "You can now create the google credentials by running the the script /create_credentials.sh in a balena terminal for the container main."
+        bash
+        sleep 3600
     else
-       echo "TBD"
+        echo "In order to create credentials (for device service variable 'GOOGLE_ASSISTANT_CREDENTIALS'), you must set the Device Service Variable 'GOOGLE_ASSISTANT_CLIENT_SECRET' to the client secret !"
+        echo "TBD"
     fi
 fi
 
