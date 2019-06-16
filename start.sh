@@ -7,7 +7,7 @@ if [ "$GOOGLE_ASSISTANT_CREDENTIALS2" != '' ]; then
 else
     echo "Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !"
     if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET" != '' ]; then
-        echo "Creating /client_secret.json fbased on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
+        echo "Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
         echo $GOOGLE_ASSISTANT_CLIENT_SECRET >  /client_secret.json   #/$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME
         echo "You can now create the google credentials by running the the script /create_credentials.sh in a balena terminal for the container main."
         bash
