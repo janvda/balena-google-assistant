@@ -21,6 +21,7 @@ RUN . /env/bin/activate && \
 
 ADD start.sh /start.sh
 ADD create_credentials.sh /create_credentials.sh
+RUN chmod a+x /create_credentials.sh
 
 # Start app
 CMD ["bash", "/start.sh"]
