@@ -19,7 +19,7 @@ RUN . /env/bin/activate && \
 # Enable init system
 # ENV INITSYSTEM on
 
-# Start app
-#CMD ["bash", "/usr/src/app/start.sh"]
+ADD start.sh /start.sh
 
-CMD ["bash"]
+# Start app
+CMD ["bash", "/start.sh"]
