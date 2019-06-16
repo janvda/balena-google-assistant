@@ -18,6 +18,8 @@ if [ "$GOOGLE_ASSISTANT_CREDENTIALS" != '' ]; then
     echo $GOOGLE_ASSISTANT_CREDENTIALS > /root/.config/google-oauthlib-tool/credentials.json
     source /env/bin/activate 
     googlesamples-assistant-hotword --project-id $GOOGLE_ASSISTANT_PROJECT_ID --device-model-id $GOOGLE_ASSISTANT_DEVICE_MODEL_ID
+    echo "ERROR: googlesamples-assistant-hotword terminated unexpectedly."
+    sleep 3600
 else
     echo "Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !"
     if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET" != '' ]; then
