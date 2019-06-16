@@ -1,0 +1,21 @@
+pcm.!default {
+
+        type asym
+
+        playback.pcm {
+                type hw
+                card 0
+                device 0
+        }
+
+        capture.pcm {
+                type plug
+                slave {
+                        pcm {
+                                type hw
+                                card 1
+                                device 0
+                        }
+                }
+        }
+}

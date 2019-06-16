@@ -20,6 +20,8 @@ RUN . /env/bin/activate && \
 # ENV INITSYSTEM on
 
 ADD start.sh /start.sh
+ADD .asoundrc /root/.asoundrc
+
 ADD create_credentials.sh /create_credentials.sh
 RUN chmod a+x /create_credentials.sh
 
