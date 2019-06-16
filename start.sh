@@ -16,6 +16,7 @@ if [ "$GOOGLE_ASSISTANT_CREDENTIALS" != '' ]; then
     echo "Creating the /root/.config/google-oauthlib-tool/credentials.json using device service variable GOOGLE_ASSISTANT_CREDENTIALS ..."
     mkdir -p /root/.config/google-oauthlib-tool/
     echo $GOOGLE_ASSISTANT_CREDENTIALS > /root/.config/google-oauthlib-tool/credentials.json
+    echo "Starting googlesamples-assistant-hotword ..."
     source /env/bin/activate 
     googlesamples-assistant-hotword --project-id $GOOGLE_ASSISTANT_PROJECT_ID --device-model-id $GOOGLE_ASSISTANT_DEVICE_MODEL_ID
     echo "ERROR: googlesamples-assistant-hotword terminated unexpectedly."
