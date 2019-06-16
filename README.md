@@ -20,7 +20,7 @@ So First you need to perform the following steps of these instructions:
 
 ## STEP 2: deploy this balena application.
 
-1. Follow the standard instructions to create and deploy balena application  = amongst others:  (fork and) clone this github repository, create the git remote for this balena application and then do a `git push balena master` (or similar command) 
+1. Follow the standard instructions to create and deploy a balena application  = amongst others:  (fork and) clone this github repository, create the git remote for this balena application and then do a `git push balena master` (or similar command) 
 2. As you have not set any service variables you will see errors in the log files.
 3. Set the following service variables using the balena dashboard.
 
@@ -52,13 +52,13 @@ Enter the authorization code:
 ```
 credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 ```
-4. copy the complete contents of this credentials.json (you can do that by opening the file with the  `nano` text editorcommand).
-5. create a new service variable GOOGLE_ASSISTANT_CREDENTIALS 
+4. copy the complete contents of this credentials.json (you can do that by opening the file with the  `nano`  text editorcommand).
+5. create a new service variable GOOGLE_ASSISTANT_CREDENTIALS:
 
 | Service            | Name  |  Description                                    |
 |------------------------- | -------------- |-------------------------------------------------|
 | **GOOGLE_ASSISTANT**  |    **GOOGLE_ASSISTANT_CREDENTIALS**       |  The complete credentials (= json string) retrieved in previous step |
-6. previous step will restart the *GOOGLE_ASSISTANT* container and if everything goes fine you should see something like below indicating that your google assistent is up and running.
+6. previous step will automatically restart the *GOOGLE_ASSISTANT* container and if everything goes fine you should see something like below indicating that your google assistent is up and running.
 ```
 17.06.19 00:25:25 (+0200) Starting service 'main sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
 17.06.19 00:25:26 (+0200)  main  Creating the /root/.config/google-oauthlib-tool/credentials.json using device service variable GOOGLE_ASSISTANT_CREDENTIALS ...
@@ -81,4 +81,5 @@ credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 
 You can test the speakers (audio) by running the command:
 `speaker-test -c2 -t wav`
+
 You can change the volume by running the command `alsamixer`
