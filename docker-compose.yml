@@ -5,3 +5,8 @@ services:
     restart: always
     network_mode: host
     privileged: true
+  pulseaudio:
+    image: woahbase/alpine-pulseaudio:armhf
+    restart: always
+    network_mode: host
+    privileged: true
