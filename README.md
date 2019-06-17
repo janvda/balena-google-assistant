@@ -32,11 +32,11 @@ So First you need to perform the following steps of these instructions:
 
 4. When the GOOGLE_ASSISTANT service is restarted you should see something like the following in the balena Logs (this also means that you can continue with the next step):
 ```
-17.06.19 00:01:49 (+0200) Starting service 'main sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
-17.06.19 00:01:49 (+0200)  main  Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !
-17.06.19 00:01:49 (+0200)  main  Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET...
-17.06.19 00:01:49 (+0200)  main  You can now create the google credentials by launching the script /create_credentials.sh in a balena terminal for the container GOOGLE_ASSISTANT.
-17.06.19 00:01:49 (+0200) Started service 'main sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
+17.06.19 08:46:12 (+0200) Starting service 'google_assistant sha256:2c90a535e07e0d1820a8706f0ff40aec8dcf7f29686684287b01afa637a97944'
+17.06.19 08:46:13 (+0200)  google_assistant  Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !
+17.06.19 08:46:13 (+0200)  google_assistant  Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET...
+17.06.19 08:46:13 (+0200)  google_assistant  You can now create the google credentials by launching the script /create_credentials.sh in a balena terminal for the service 'google_assistant'.
+17.06.19 08:46:13 (+0200) Started service 'google_assistant sha256:2c90a535e07e0d1820a8706f0ff40aec8dcf7f29686684287b01afa637a97944'
 ```
 
 ## STEP 3: creating the (google assistant) credentials
@@ -60,19 +60,19 @@ credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 | **google_assistant**  |    **GOOGLE_ASSISTANT_CREDENTIALS**       |  The complete credentials (= json string) retrieved in previous step |
 6. previous step will automatically restart the *GOOGLE_ASSISTANT* container and if everything goes fine you should see something like below indicating that your google assistent is up and running.
 ```
-17.06.19 00:25:25 (+0200) Starting service 'main sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
-17.06.19 00:25:26 (+0200)  main  Creating the /root/.config/google-oauthlib-tool/credentials.json using device service variable GOOGLE_ASSISTANT_CREDENTIALS ...
-17.06.19 00:25:26 (+0200)  main  Starting googlesamples-assistant-hotword ...
-17.06.19 00:25:26 (+0200) Started service 'main sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
-17.06.19 00:25:31 (+0200)  main  device_model_id: pi3thrXXXXXXXXXXXXX44
-17.06.19 00:25:31 (+0200)  main  device_id: B12XXXXXXXXXXXXX64E3
-17.06.19 00:25:31 (+0200)  main  
-17.06.19 00:25:36 (+0200)  main  Registering...Done.
-17.06.19 00:25:36 (+0200)  main  
-17.06.19 00:25:36 (+0200)  main  ON_MUTED_CHANGED:
-17.06.19 00:25:36 (+0200)  main    {"is_muted": false}
-17.06.19 00:25:36 (+0200)  main  ON_START_FINISHED
-17.06.19 00:25:36 (+0200)  main  ON_MEDIA_STATE_IDLE
+17.06.19 00:25:25 (+0200) Starting service 'google_assistant sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
+17.06.19 00:25:26 (+0200)  google_assistant  Creating the /root/.config/google-oauthlib-tool/credentials.json using device service variable GOOGLE_ASSISTANT_CREDENTIALS ...
+17.06.19 00:25:26 (+0200)  google_assistant  Starting googlesamples-assistant-hotword ...
+17.06.19 00:25:26 (+0200) Started service 'google_assistant sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
+17.06.19 00:25:31 (+0200)  google_assistant  device_model_id: pi3thrXXXXXXXXXXXXX44
+17.06.19 00:25:31 (+0200)  google_assistant  device_id: B12XXXXXXXXXXXXX64E3
+17.06.19 00:25:31 (+0200)  google_assistant  
+17.06.19 00:25:36 (+0200)  google_assistant  Registering...Done.
+17.06.19 00:25:36 (+0200)  google_assistant  
+17.06.19 00:25:36 (+0200)  google_assistant  ON_MUTED_CHANGED:
+17.06.19 00:25:36 (+0200)  google_assistant   {"is_muted": false}
+17.06.19 00:25:36 (+0200)  google_assistant  ON_START_FINISHED
+17.06.19 00:25:36 (+0200)  google_assistant  ON_MEDIA_STATE_IDLE
 ```
 
 # Miscellaneous
