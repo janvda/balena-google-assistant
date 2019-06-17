@@ -77,14 +77,21 @@ credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 # Troubleshooting & Issues
 See also [issues reported in this github repository](https://github.com/janvda/balena-google-assistant/issues) (feel free to add your own issues)
 
-## 1. ERROR "`google_assistant  [FATAL:audio_input_stream.cc(47)] Input device could not be opened: default`"
+## 1. (Very) Noisy audio
+If the audio jack is not plugged correctly you will hear a lot of noise.  In that case move the audio jack a bit more in or out until the noise is gone.
+
+## 2. ERROR "`google_assistant  [FATAL:audio_input_stream.cc(47)] Input device could not be opened: default`"
 This indicates that the default audio input stream (= microphone) is not properly configured on your raspberry pi.
 
 # Miscellaneous
 
 ## Testing the audio
 
-You can test the speakers (audio) by running the command:
-`speaker-test -c2 -t wav`
-
-You can change the volume by running the command `alsamixer`
+You can test the speakers (audio) by running the following command in a terminal for the service "GOOGLE_ASSISTANT": 
+```
+speaker-test -c2 -t wav
+```
+You can change the volume by running the command: 
+```
+ alsamixer
+ ```
