@@ -1,0 +1,6 @@
+version: '2'
+  google_assistant:
+    build: ./google_assistant
+    restart: always
+    network_mode: host
+    privileged: true
