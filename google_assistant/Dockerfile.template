@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-python:3.5.7-stretch-build
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-python:3.5.7-stretch-build-20190529
 
 RUN apt-get update && apt-get install -yq --no-install-recommends \
   portaudio19-dev \
