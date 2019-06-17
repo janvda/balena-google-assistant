@@ -51,7 +51,7 @@ Enter the authorization code:
 ```
 credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 ```
-4. copy the complete contents of this credentials.json (you can do that by opening the file with the  `nano`  text editorcommand).
+4. copy the complete contents of this credentials.json (you can do that by opening the file with the text editor command  `nano` ).
 5. create a new service variable GOOGLE_ASSISTANT_CREDENTIALS:
 
 | Service            | Name  |  Description                                    |
@@ -74,8 +74,10 @@ credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 17.06.19 00:25:36 (+0200)  google_assistant  ON_MEDIA_STATE_IDLE
 ```
 
-# Troubleshooting
-## ERROR "`google_assistant  [FATAL:audio_input_stream.cc(47)] Input device could not be opened: default`"
+# Troubleshooting & Issues
+See also [issues reported in this github repository](https://github.com/janvda/balena-google-assistant/issues) (feel free to add your own issues)
+
+## 1. ERROR "`google_assistant  [FATAL:audio_input_stream.cc(47)] Input device could not be opened: default`"
 This indicates that the default audio input stream (= microphone) is not properly configured on your raspberry pi.
 
 # Miscellaneous
