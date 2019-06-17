@@ -10,7 +10,7 @@ In other words it turns your raspberry pi into a _google home_ device
 2. a USB microphone is connected to one of the USB ports of the raspberry pi.
 This can also be a webcam with a microphone.
 
-## STEP 1: Required Google Configuration
+## STEP 1: Configure Google Project and Register Device Model
 This repository is based on the instructions specified at: https://developers.google.com/assistant/sdk/guides/library/python/
 
 So First you need to perform the following steps of these instructions:
