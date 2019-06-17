@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ "$GOOGLE_ASSISTANT_DEVICE_MODEL_ID" = '' ]; then
-    echo "ERROR: The device service variable 'GOOGLE_ASSISTANT_DEVICE_MODEL_ID' is not set.  This variable must be set for the container 'GOOGLE_ASSISTANT'"
+    echo "ERROR: The device service variable 'GOOGLE_ASSISTANT_DEVICE_MODEL_ID' is not set.  This variable must be set for the service 'google_assistant'"
     sleep 600
     exit 1
 fi
 
 if [ "$GOOGLE_ASSISTANT_PROJECT_ID" = '' ]; then
-    echo "ERROR: The device service variable 'GOOGLE_ASSISTANT_PROJECT_ID' is not set.  This variable must be set for the container 'GOOGLE_ASSISTANT'"
+    echo "ERROR: The device service variable 'GOOGLE_ASSISTANT_PROJECT_ID' is not set.  This variable must be set for the service 'google_assistant'"
     sleep 600
     exit 1
 fi
@@ -26,7 +26,7 @@ else
     if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET" != '' ]; then
         echo "Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
         echo $GOOGLE_ASSISTANT_CLIENT_SECRET >  /client_secret.json   #/$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME
-        echo "You can now create the google credentials by launching the script /create_credentials.sh in a balena terminal for the container GOOGLE_ASSISTANT."
+        echo "You can now create the google credentials by launching the script /create_credentials.sh in a balena terminal for the service 'google_assistant'."
         bash
         sleep 3600
     else
