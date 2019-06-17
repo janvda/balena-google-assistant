@@ -9,4 +9,7 @@ services:
     image: woahbase/alpine-pulseaudio:armhf
     #restart: always
     network_mode: host
-    privileged: true
+    #privileged: true
+    labels:
+      io.balena.features.dbus: '1'
+      
