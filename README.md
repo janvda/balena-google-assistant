@@ -75,6 +75,10 @@ credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
 17.06.19 00:25:36 (+0200)  google_assistant  ON_MEDIA_STATE_IDLE
 ```
 
+# Troubleshooting
+## ERROR "`google_assistant  [FATAL:audio_input_stream.cc(47)] Input device could not be opened: default`"
+This indicates that the default audio input stream (= microphone) is not properly configured on your raspberry pi.
+
 # Miscellaneous
 
 ## Testing the audio
