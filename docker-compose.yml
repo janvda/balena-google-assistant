@@ -1,4 +1,5 @@
 version: '2'
+services:
   google_assistant:
     build: ./google_assistant
     restart: always
