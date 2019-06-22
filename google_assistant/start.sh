@@ -10,7 +10,7 @@ if [ "$GOOGLE_ASSISTANT_DEVICE_MODEL_ID" = '' ]; then
 fi
 
 if [ "$GOOGLE_ASSISTANT_PROJECT_ID" = '' ]; then
-    echo "ERROR: The device service variable 'GOOGLE_ASSISTANT_PROJECT_ID' is not set.  This variable must be set for the service 'google_assistant'"
+    echo "ERROR: device service variable 'GOOGLE_ASSISTANT_PROJECT_ID' is not set.  This variable must be set for the service 'google_assistant'"
     sleep 600
     exit 1
 fi
@@ -28,10 +28,10 @@ if [ -f "$CREDENTIALS_FILE"  ]; then
     echo "ERROR: googlesamples-assistant-hotword terminated unexpectedly."
     sleep 3600
 else
-    echo "Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !"
+    echo "The credentials ($CREDENTIALS_FILE) are not set !"
     if [ "$GOOGLE_ASSISTANT_CLIENT_SECRET" != '' ]; then
-        echo "Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
-        echo $GOOGLE_ASSISTANT_CLIENT_SECRET >  /client_secret.json   #/$GOOGLE_ASSISTANT_CLIENT_SECRET_FILENAME
+        echo "... Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET..."
+        echo $GOOGLE_ASSISTANT_CLIENT_SECRET >  /client_secret.json 
         echo "**********************************************************************"
         echo "* You can now create the google credentials by launching the script: *"
         echo "*                 /create_credentials.sh                             *"
@@ -40,7 +40,7 @@ else
         bash
         sleep 3600
     else
-        echo "In order to create the credentials (for device service variable 'GOOGLE_ASSISTANT_CREDENTIALS'), you must set the Device Service Variable 'GOOGLE_ASSISTANT_CLIENT_SECRET' to the client secret !"
+        echo "In order to create the credentials, you must set the Device Service Variable 'GOOGLE_ASSISTANT_CLIENT_SECRET' to the client secret !"
         sleep 600
         exit 1
     fi
