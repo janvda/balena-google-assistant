@@ -49,9 +49,9 @@ Enter the authorization code:
 2. Copy paste above URL in a browser and follow the instructions as outlined in step 3. of [Generate Credentials](https://developers.google.com/assistant/sdk/guides/library/python/embed/install-sample).
 3. copy paste the authorization code in the balena terminal window and you should get something like:
 ```
-credentials saved: /path/to/.config/google-oauthlib-tool/credentials.json
+credentials saved: /root/.config/google-oauthlib-tool/credentials.json
 ```
-4. copy the complete contents of this credentials.json (you can do that by opening the file with the text editor command  `nano` ).
+4. copy the complete contents of this credentials.json (you can do that by copying the json string outputted by the command   `cat /root/.config/google-oauthlib-tool/credentials.json` ).
 5. create a new service variable GOOGLE_ASSISTANT_CREDENTIALS:
 
 | Service            | Name  |  Description                                    |
