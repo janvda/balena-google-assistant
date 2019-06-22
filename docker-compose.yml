@@ -1,7 +1,11 @@
 version: '2'
+volumes:
+  google_assistant_credentials_data:
 services:
   google_assistant:
     build: ./google_assistant
     restart: always
     network_mode: host
     privileged: true
+    volumes:
+      - 'google_assistant_credentials_data:/root/.config/google-oauthlib-tool'
