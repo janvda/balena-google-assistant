@@ -8,4 +8,5 @@ google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-proto
 echo "The credentials ="
 cat /root/.config/google-oauthlib-tool/credentials.json
 echo ""
-echo "You should now restart the google_assistant service."
+echo ""
+echo "You should now restart the google_assistant service !"
