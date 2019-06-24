@@ -31,11 +31,15 @@ So first you need to perform the following steps of these instructions:
 
 4. When the GOOGLE_ASSISTANT service is restarted you should see something like the following in the balena Logs (this also means that you can continue with the next step):
 ```
-17.06.19 08:46:12 (+0200) Starting service 'google_assistant sha256:2c90a535e07e0d1820a8706f0ff40aec8dcf7f29686684287b01afa637a97944'
-17.06.19 08:46:13 (+0200)  google_assistant  Device Service Variable 'GOOGLE_ASSISTANT_CREDENTIALS' is not set !
-17.06.19 08:46:13 (+0200)  google_assistant  Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET...
-17.06.19 08:46:13 (+0200)  google_assistant  You can now create the google credentials by launching the script /create_credentials.sh in a balena terminal for the service 'google_assistant'.
-17.06.19 08:46:13 (+0200) Started service 'google_assistant sha256:2c90a535e07e0d1820a8706f0ff40aec8dcf7f29686684287b01afa637a97944'
+24.06.19 17:56:33 (+0200) Starting service 'google_assistant sha256:c392950370c392295ee322780bd29f97aead2dc2e1d739977b2f401b172d3c8d'
+24.06.19 17:56:34 (+0200)  google_assistant  The credentials (/root/.config/google-oauthlib-tool/credentials.json) are not set !
+24.06.19 17:56:34 (+0200)  google_assistant  ... Creating /client_secret.json based on the contents of device service variables GOOGLE_ASSISTANT_CLIENT_SECRET...
+24.06.19 17:56:34 (+0200)  google_assistant  **********************************************************************
+24.06.19 17:56:34 (+0200)  google_assistant  * You can now create the google credentials by launching the script: *
+24.06.19 17:56:34 (+0200)  google_assistant  *                 /create_credentials.sh                             *
+24.06.19 17:56:34 (+0200)  google_assistant  * in a balena terminal for the service 'google_assistant'.           *
+24.06.19 17:56:34 (+0200)  google_assistant  **********************************************************************
+24.06.19 17:56:34 (+0200) Started service 'google_assistant sha256:c392950370c392295ee322780bd29f97aead2dc2e1d739977b2f401b172d3c8d'
 ```
 
 ## STEP 3: Create the (google assistant) credentials
@@ -49,15 +53,15 @@ Enter the authorization code:
 2. Copy paste above URL in a browser and follow the instructions as outlined in step 3. of [Generate Credentials](https://developers.google.com/assistant/sdk/guides/library/python/embed/install-sample).
 3. copy paste the authorization code in the balena terminal window and you should get something like:
 ```
+...
+Enter the authorization code: 4/cgElC56TDKDGEVpmr8Vq2apOOgVt1ApW9s-E3yjp17o5D9HRDe3iQ4U
 credentials saved: /root/.config/google-oauthlib-tool/credentials.json
+The credentials =
+{"scopes": ["https://www.googleapis.com/auth/assistant-sdk-prototype", "https://www.googleapis.com/auth/gcm"], "client_id": "3983XXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com", "token_uri": "https://accounts.google.com/o/oauth2/token", "client_secret": "KiXXXXXXXXXXXXXXXXXXXc7", "refresh_token": "1/oohXXXXXXXXXXXXXXXXXXXXXX4s"}
+You should now restart the google_assistant service.
+root@f0bc010:/# 
 ```
-4. copy the complete contents of this credentials.json (you can do that by copying the json string outputted by the command   `cat /root/.config/google-oauthlib-tool/credentials.json` ).
-5. create a new service variable GOOGLE_ASSISTANT_CREDENTIALS:
-
-| Service            | Name  |  Description                                    |
-|------------------------- | -------------- |-------------------------------------------------|
-| **google_assistant**  |    **GOOGLE_ASSISTANT_CREDENTIALS**       |  The complete credentials (= json string) retrieved in previous step |
-6. previous step will automatically restart the *GOOGLE_ASSISTANT* service and if everything goes fine you should see something like below indicating that your google assistent is up and running.
+4. That is it.  You can now restart the google_assistant service within the balena dashboard and you should see something like:
 ```
 17.06.19 00:25:25 (+0200) Starting service 'google_assistant sha256:47e2a96dfd306851d3c4934cdf05eae46ab5d21b89c14303b44d37d5fd1c99a1'
 17.06.19 00:25:26 (+0200)  google_assistant  Creating the /root/.config/google-oauthlib-tool/credentials.json using device service variable GOOGLE_ASSISTANT_CREDENTIALS ...
@@ -73,6 +77,15 @@ credentials saved: /root/.config/google-oauthlib-tool/credentials.json
 17.06.19 00:25:36 (+0200)  google_assistant  ON_START_FINISHED
 17.06.19 00:25:36 (+0200)  google_assistant  ON_MEDIA_STATE_IDLE
 ```
+
+## ALTERNATIVE STEP 3: Set google credentials through device service variable.
+It is also possible to set the google credentials through the device service variable `GOOGLE_ASSISTANT_CREDENTIALS`.
+Of course in that case you must know the google credentials.
+This step is mainly there to be backwards compatible with version [v1.0.0](https://github.com/janvda/balena-google-assistant/releases/tag/v1.0.0)
+
+| Service            | Name  |  Description                                    |
+|------------------------- | -------------- |-------------------------------------------------|
+| **google_assistant**  |    **GOOGLE_ASSISTANT_CREDENTIALS**       |  The complete credentials (= json string).  If this environment variable is set then the google assistant at startup will first *overwrite* the contents of the file `/root/.config/google-oauthlib-tool/credentials.json` with the contents of this variable.|
 
 # Troubleshooting & Issues
 See also [issues reported in this github repository](https://github.com/janvda/balena-google-assistant/issues) (feel free to add your own issues)
