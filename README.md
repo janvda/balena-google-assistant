@@ -54,7 +54,7 @@ Enter the authorization code:
 3. copy paste the authorization code in the balena terminal window and you should get something like:
 ```
 ...
-Enter the authorization code: 4/cgElC56TDKDGEVpmr8Vq2apOOgVt1ApW9s-E3yjp17o5D9HRDe3iQ4U
+Enter the authorization code: 4/cgElC5XXXXXXXXXXXXXXXXXXXXXXXXXXXXXDe3iQ4U
 credentials saved: /root/.config/google-oauthlib-tool/credentials.json
 The credentials =
 {"scopes": ["https://www.googleapis.com/auth/assistant-sdk-prototype", "https://www.googleapis.com/auth/gcm"], "client_id": "3983XXXXXXXXXXXXXXXXXXXXXXX.apps.googleusercontent.com", "token_uri": "https://accounts.google.com/o/oauth2/token", "client_secret": "KiXXXXXXXXXXXXXXXXXXXc7", "refresh_token": "1/oohXXXXXXXXXXXXXXXXXXXXXX4s"}
